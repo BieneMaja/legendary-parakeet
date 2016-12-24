@@ -9,10 +9,10 @@ Radius_kr = [float(x) for x in [input("Radius der Kugel: "),
                                             input("Radius des Zylinders: "),
                                             input("Radius der Scheibe: "),
                                             input("Radius des Hohlzylinders (innen): "),
-                                            input("Radius des Hohlzylinders (außen): "),
+                                            input("Radius des Hohlzylinders (auÃŸen): "),
                                             input("Abstand der Hanteln: "),
-                                            input("Kantenlänge des Würfels: "),
-                                            input("Länge des Stabes: "),]]
+                                            input("KantenlÃ¤nge des WÃ¼rfels: "),
+                                            input("LÃ¤nge des Stabes: "),]]
 Radius_k = unumpy.uarray(Radius_kr,
                          [float(x) for x in input("Fehler: ").split(",")])
 Masse_kr = [float(x) for x in [input("Masse der Kugel: "),
@@ -21,17 +21,17 @@ Masse_kr = [float(x) for x in [input("Masse der Kugel: "),
                                             input("Masse des Hohlzylinders: "),
                                             input("Masse des Hohlzylinders: "),
                                             input("Masse der Hanteln: "),
-                                            input("Masse des Würfels: "),
+                                            input("Masse des WÃ¼rfels: "),
                                             input("Masse des Stabes: "),]]
 Masse_k = unumpy.uarray(Masse_kr,
                          [float(x) for x in input("Fehler: ").split(",")])
 Jfaktor = [2./5., 1./2., 1./2., 1./2. ,1./2., 1./3. , 1./6., 1./12. ]
 
 Masse_l = [float(x) for x in input("Massen links: ").split(",")]
-winkel_lp = [float(x) for x in input("Winkelausschlag (°) links: ")]
+winkel_lp = [float(x) for x in input("Winkelausschlag (Â°) links: ")]
 winkel_l = unumpy.uarray(winkel_lp,[float(input("Fehler: "))])
 Masse_r = [float(x) for x in input("Massen rechts: ").split(",")]
-winkel_rp = [float(x) for x in input("Winkelausschlag (°) rechts: ")]
+winkel_rp = [float(x) for x in input("Winkelausschlag (Â°) rechts: ")]
 winkel_r = unumpy.uarray(winkel_lp,[float(input("Fehler: "))])
 
 winkel_lp = [winkel_lp[i]/180 *np.pi for i in range(len(winkel_lp))]
@@ -61,16 +61,16 @@ plt.xlabel("Winkelausschlag/$\pi$")
 ax.legend(loc="upper left",frameon=True)
 #plt.savefig("winkelreg.png")
 plt.show()
-print("Rückstellmoment links durch Regression: "+str(m) + " Einheit?")
-print("Rückstellmoment rechts durch Regression: "+str(m2) + " Einheit?")
+print("RÃ¼ckstellmoment links durch Regression: "+str(m) + " Einheit?")
+print("RÃ¼ckstellmoment rechts durch Regression: "+str(m2) + " Einheit?")
 
 Sd_w = unumpy.uarray([[0.1*float(x) for x in input("Schwingungsdauer der Kugel: ").split(",")],
                       [0.1*float(x) for x in input("Schwingungsdauer des Zylinders: ").split(",")],
                       [0.1*float(x) for x in input("Schwingungsdauer der Scheibe: ").split(",")],
                       [0.1*float(x) for x in input("Schwingungsdauer des Hohlzylinders: ").split(",")],
                       [0.1*float(x) for x in input("Schwingungsdauer der Hanteln: ").split(",")],
-                      [0.1*float(x) for x in input("Schwingungsdauer des Würfels (Mitte): ").split(",")],
-                      [0.1*float(x) for x in input("Schwingungsdauer des Würfels (Ecke): ").split(",")],
+                      [0.1*float(x) for x in input("Schwingungsdauer des WÃ¼rfels (Mitte): ").split(",")],
+                      [0.1*float(x) for x in input("Schwingungsdauer des WÃ¼rfels (Ecke): ").split(",")],
                       [0.1*float(x) for x in input("Schwingungsdauer des Stabes im Schwerpunkt: ").split(",")],
                       [0.1*float(x) for x in input("Schwingungsdauer des Stabes parrallel dazu: ").split(",")]],
                      [0.1*float(input("Fehler: "))])
@@ -88,9 +88,9 @@ for i in range(8):
         Theta.append(Teta(Masse_kr[i]/3.,Radius_kr[i],Jfaktor[i])+2*Masse_kr[i]/3.*(Radius_kr[i]/2.)**2)
     else:
         Theta.append(Teta(Masse_kr[i],Radius_kr[i],Jfaktor[i]))
-print("Thm ausgerechnet, Reihenfolge: Kugel, Zylinder, Scheibe, Hohlzylinder,:), Hanteln, Würfel, Stab")
+print("Thm ausgerechnet, Reihenfolge: Kugel, Zylinder, Scheibe, Hohlzylinder,:), Hanteln, WÃ¼rfel, Stab")
 print(Theta , "kg * m**2")
-#Trägheitsmoment aus der Schwingdauer, man rechnet mit dem Mittelwert des Rückstellmoments W weiter.
+#TrÃ¤gheitsmoment aus der Schwingdauer, man rechnet mit dem Mittelwert des RÃ¼ckstellmoments W weiter.
 Wl = [m,m2]
 W = np.mean(Wl)
 def Teta_schwingung(W,T):
@@ -98,10 +98,10 @@ def Teta_schwingung(W,T):
     return(J)
 
 Thm_schw = [Teta_schwingung(W,np.mean(Sd_w[i])) for i in range(len(Sd_w))]
-print("""Trägheitsmoment aus der Schwingung berechnet (Reihenfolge wie in der Eingabe) in kg * m**2:\n""",Thm_schw)
+print("""TrÃ¤gheitsmoment aus der Schwingung berechnet (Reihenfolge wie in der Eingabe) in kg * m**2:\n""",Thm_schw)
 
-Sd_Tisch = unumpy.uarray([[float(x) for x in input("1) 10*Schwingungsdauer des Tischchens (13 Werte, Abstand 15°): ").split(",")],
-                          [float(x) for x in input("2) 10*Schwingungsdauer des Tischchens (13 Werte, Abstand 15°): ").split(",")]],
+Sd_Tisch = unumpy.uarray([[float(x) for x in input("1) 10*Schwingungsdauer des Tischchens (13 Werte, Abstand 15Â°): ").split(",")],
+                          [float(x) for x in input("2) 10*Schwingungsdauer des Tischchens (13 Werte, Abstand 15Â°): ").split(",")]],
                          [float(input("Fehler: "))])
 Grad_Tisch = [0,15,30,45,60,75,90,105,120,135,150,165,180]
 Thm_tisch1 =[Teta_schwingung(W,Sd_Tisch[0][i]) for i in range(len(Grad_Tisch))]
@@ -126,7 +126,7 @@ ax = plt.subplot(111, projection='polar')
 ax.plot(Grad_Tischp, rq, color='r', linewidth=1)
 ax.set_rmax(70)
 ax.grid(True)
-#plt.savefig('Trägheitsmoment-Ellipse.png')
+#plt.savefig('TrÃ¤gheitsmoment-Ellipse.png')
 plt.show()
 
 print("Teil B")
@@ -137,7 +137,7 @@ Messungen = unumpy.uarray([float(x) for x in [input("Radius Felge: "),
                                              input("Abstand Gewicht zur Drehachse: ")]],
                           [float(input("Fehler: "))])
 
-Massen = [float(x) for x in input("Angehängte Massen: ").split(",")]
+Massen = [float(x) for x in input("AngehÃ¤ngte Massen: ").split(",")]
 abstand = [[float(x) for x in input("Abstand der Sekundenmarken" +str(Massen[i])+"kg: ").split(",")]for i in range(len(Massen))]
 abstandfehler = [float(x) for x in input("Fehler (4 Werte erwartet): ").split(",")]
 #abstand_mit_fehler = unumpy.uarray(abstand,abstandfehler)
@@ -156,7 +156,7 @@ for i in range(4):
     ax.legend(loc="upper left",frameon=True)
     #plt.savefig("abstandreg"+str(i)+".png")
     plt.show()
-print("Beschleunigung des großen Rades durch Regression: ",beschl,"m*s**-1")
+print("Beschleunigung des groÃŸen Rades durch Regression: ",beschl,"m*s**-1")
 #a_klein = [beschl[i]*Messungen[1]/Messungen[0] for i in range(len(Massen))]
 #print("Beschleunigung des kleinen Rades: ",a,"m*s**-1")
 J=[(Massen[i]*9.81*Messungen[1]*Messungen[0])/beschl[i] - Massen[i]*Messungen[1]**2]
