@@ -88,7 +88,9 @@ for i in range(8):
         Theta.append(Teta(Masse_kr[i]/3.,Radius_kr[i],Jfaktor[i])+2*Masse_kr[i]/3.*(Radius_kr[i]/2.)**2)
     else:
         Theta.append(Teta(Masse_kr[i],Radius_kr[i],Jfaktor[i]))
-print("Thm ausgerechnet, Reihenfolge: Kugel, Zylinder, Scheibe, Hohlzylinder,:), Hanteln, Würfel, Stab")
+print("""Thm ausgerechnet, Reihenfolge: Kugel, Zylinder, Scheibe, Hohlzylinder,:), Hanteln, Würfel, Stab.
+      Der Würfel hat mit beiden Drehachsen das gleiche Trägheitsmoment und 
+      mit dem Steinerschen Satz muss das Trägheitsmoment des Stabes mit der verschobenen Drehachse ausgerechnet werden.""")
 print(Theta , "kg * m**2")
 #Trägheitsmoment aus der Schwingdauer, man rechnet mit dem Mittelwert des Rückstellmoments W weiter.
 Wl = [m,m2]
