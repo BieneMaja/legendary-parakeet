@@ -4,7 +4,7 @@ from uncertainties import ufloat
 import matplotlib.pyplot as plt
 print("""Bitte gib die Werte in SI-Einheiten (m,kg,s) ein, sonst stimmen die Ergebnisse nicht.
 Falls die Eingabe im Plural ist, gib die Werte wie folgt mit einem Komma getrennt ein: 0.1,1.34,2,09 .
-Falls Fehler auftreten, kopier bitte die Fehlermeldung und schicke sie mir - oder versuche, es selber zu lösen :)""")
+Falls Fehler auftreten, kopier bitte die Fehlermeldung und schicke sie mir - oder versuche, es selber zu lÃ¶sen :)""")
 mes1 = [float(input("Raddurchmesser: "))*0.5,float(input("Radgewicht: ")),float(input("Masse des Zusatzgewichtes: ")),float(input("Raddicke: "))]
 Sd = unumpy.uarray([[float(x) for x in input("Schwingungsdauer links: ").split(",")],
                     [float(x) for x in input("Schwingungsdauer rechts: ").split(",")]],
@@ -30,9 +30,9 @@ m = [float(x) for x in input("Massen: ").split(",")]
 mes2 = unumpy.uarray([float(input("Masse Ausgleichgewicht: ")),
                       float(input("Dicke Ausgleichgewicht: ")),
                      float(input("Durchmesser Ausgleichgewicht: ")),
-                    float(input("Abstand Ausgleichgewicht zu Unterstützpunkt: ")),
+                    float(input("Abstand Ausgleichgewicht zu UnterstÃ¼tzpunkt: ")),
                       float(input("Abstand Kerbe - Drehachse: ")),
-                      float(input("Stablänge: "))],[float(x) for x in input("Fehler: ").split(",")])
+                      float(input("StablÃ¤nge: "))],[float(x) for x in input("Fehler: ").split(",")])
 a=[]
 c=[]
 for i in range(len(m)):
@@ -40,7 +40,7 @@ for i in range(len(m)):
 b=[float(input("Fehler der Lichtschranke: "))]
 rotp1 = unumpy.uarray(a,b) 
 for i in range(len(m)):
-    c.append([float(x) for x in input("Halbe Präzessionsperioden "+ str(m[i])+" kg:").split(",")])
+    c.append([float(x) for x in input("Halbe PrÃ¤zessionsperioden "+ str(m[i])+" kg:").split(",")])
 d=[float(input("Fehler der Stoppuhr + Reaktionszeit: "))]
 prazf = unumpy.uarray(c,d)
 wr = 1/(2*np.pi)*(rotp1)
@@ -49,8 +49,6 @@ wp = [np.pi/(prazf[i][j]) for i in range(len(m)) for j in range(len(prazf[i]))]
 wpp = [[np.pi/c[i][j] for j in range(len(c[i]))] for i in range(len(m))]
 wppf = [[prazf[i][j].s for j in range(len(prazf[i]))] for i in range(len(m))]
 wrpf = [[rotp1[i][j].std_dev for j in range(len(rotp1[i]))] for i in range(len(m))]
-#u=[prazf[i]/rotp1[i]]
-#mittel=[np.mean(u) for i in range(len(u))]
 
 f = plt.figure()
 ax = plt.axes()
@@ -68,7 +66,7 @@ def thm3(r,m,wr,wp):
     J = (r*m*g)/(wr*wp)
     return J
 for i in range(len(m)):
-    print(thm3(mes2[4],m[i],np.mean(wr[i]),np.mean(wp[i]))," = Thm für "+str(m[i])+" = (r*m*g)/(wr*wp)")
+    print(thm3(mes2[4],m[i],np.mean(wr[i]),np.mean(wp[i]))," = Thm fÃ¼r "+str(m[i])+" = (r*m*g)/(wr*wp)")
 
 rotpp = [[float(x) for x in input("Rotationsperioden "+str(m[i])+" kg: ").split(",")] for i in range(len(m))]
 nutpp = [[float(x) for x in input("10*Nutationsperioden "+str(m[i])+" kg: ").split(",")] for i in range(len(m))]
@@ -83,7 +81,7 @@ plt.xlabel(r"$\omega_R / s^{-1}$")
 ax.legend(loc="upper left",frameon=True)
 plt.savefig("wnwr.png")
 plt.show()
-print("""Hier habe ich als Fehler (für x und y) 0.001 eingestellt. Das war geschätzt...
+print("""Hier habe ich als Fehler (fÃ¼r x und y) 0.001 eingestellt. Das war geschÃ¤tzt...
 Die Plots wurden unter den Namen 'wpwr.png' und 'wnwr.png' gespeichert. Falls du das alles mehrmals gemacht hast,
-ist wahrscheinlich nur die neueste Version gespeichert und der Rest überschrieben.
-Viel Spaß beim Suchen und ich hoffe, es war hilfreich :)""")
+ist wahrscheinlich nur die neueste Version gespeichert und der Rest Ã¼berschrieben.
+Viel SpaÃŸ beim Suchen und ich hoffe, es war hilfreich :)""")
