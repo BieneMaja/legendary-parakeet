@@ -6,3 +6,5 @@ Falls etwas nicht funktioniert, könnt ihr das melden (oder versuchen es selber 
 http://www.numpy.org/
 http://matplotlib.org/users/installing.html
 https://pythonhosted.org/uncertainties/
+
+A parakeet is any one of a large number of small to medium-sized species of parrot, in multiple genera, that generally have long tail feathers. Older spellings still sometimes encountered are paroquet or paraquet. (Wikipedia)
