@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 plt.style.use("seaborn-whitegrid")
-import math
 import numpy as np
 from uncertainties import unumpy
 
@@ -115,10 +114,10 @@ Thm_Tischm =[np.mean(Thm_Tisch[i]) for i in range(len(Grad_Tisch))]
 Grad_Tischp=[]
 rq=[]
 for i in range(len(Grad_Tisch)):
-    rq.append(1/(math.sqrt(Thm_Tischm[i].nominal_value)))
+    rq.append(1/(np.sqrt(Thm_Tischm[i].nominal_value)))
     Grad_Tischp.append(Grad_Tisch[i]/180. *np.pi)
 for i in range(len(Grad_Tisch)):
-    rq.append(1/(math.sqrt(Thm_Tischm[i].nominal_value)))
+    rq.append(1/(np.sqrt(Thm_Tischm[i].nominal_value)))
     Grad_Tischp.append(np.pi+Grad_Tisch[i]/180. *np.pi)
 print("Reziproke Quadratwurzeln: ",rq)
 print("Maximum: ",max(rq),"Minimum: ",min(rq))
@@ -140,7 +139,7 @@ Messungen = unumpy.uarray([float(x) for x in [input("Radius Felge: "),
                           [float(input("Fehler: "))])
 
 Massen = [float(x) for x in input("Angehängte Massen: ").split(",")]
-abstand = [[float(x) for x in input("Abstand der Sekundenmarken" +str(Massen[i])+"kg: ").split(",")]for i in range(len(Massen))]
+abstand = [[float(x) for x in input("Abstand der Sekundenmarken " +str(Massen[i])+" kg: ").split(",")]for i in range(len(Massen))]
 abstandfehler = [float(x) for x in input("Fehler (4 Werte erwartet): ").split(",")]
 #abstand_mit_fehler = unumpy.uarray(abstand,abstandfehler)
 ax = plt.axes()
@@ -170,7 +169,7 @@ Sd_v3 = unumpy.uarray([float(x) for x in input("Schwingungsdauer links (2x), rec
 abstand_end1 = []
 def Thm(Sd,m,z):
     T=Sd*0.2
-    J = (T**2*9.81*z*m)/(4*math.pi**2) - m*z**2
+    J = (T**2*9.81*z*m)/(4*np.pi**2) - m*z**2
     return J
 ThetaB2 = [Thm(Sd_v3[i],Messungen[2],Messungen[3]) for i in range(4)]
 u=np.mean(ThetaB2[0:2])
