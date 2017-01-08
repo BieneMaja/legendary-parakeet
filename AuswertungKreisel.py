@@ -26,40 +26,47 @@ print(thm(mes1[1],mes1[0],0.5),r" = Thm horizontal ($kgm^2 s^{-1}$) = 0.5*M*r**2
 print(thm(mes1[1],mes1[0],0.25)+thm(mes1[1],0.03,1/12.),r" = Thm vertikal ($kgm^2 s^{-1}$) = 0.25*M*r**2")
 print(Thms," = Thm aus Schwingungsdauer = (T**2*g*z*m)/(4*np.pi**2)-m*z**2")
 
-m = [float(x) for x in input("Massen: ").split(",")]
+m=[float(x) for x in input("Massen: ").split(",")]
+def periodenwerte(m,name):
+    a=[]
+    for i in range(len(m)):
+        a.append([float(x) for x in input(str(name) + str(m[i])+" kg:").split(",")])
+    return a
+
+a=periodenwerte(m,"Rotationsperioden ")            
+b=[float(input("Fehler der Lichtschranke: "))]
+rotp1 = unumpy.uarray(a,b)
+
+c=periodenwerte(m,"Halbe Präzessionsperioden ")
+d=[float(input("Fehler der Stoppuhr + Reaktionszeit: "))]
+prazf = unumpy.uarray(c,d)
+
+if len(c[0])== len(a[0])-1:
+    a=[[np.mean([a[j][i],a[j][i+1]]) for i in range(len(a[i])-1)] for j in range(len(m))]
+
+wr = 1/(2*np.pi)*(rotp1)
+wrp = [[a[i][j]/(2*np.pi) for j in range(len(a[i]))] for i in range(len(m))]
+wp = np.pi/(prazf)
+wpp = [[np.pi/c[i][j] for j in range(len(c[i]))] for i in range(len(m))]
+wppf = wp[0][0].std_dev
+wrpf = wr[0][0].std_dev
+print(wppf,wrpf)
+f = plt.figure()
+ax = plt.axes()
+for i in range(len(m)):
+    plt.errorbar(wpp[i],wrp[i], yerr=wp[0][0].std_dev,xerr=wr[0][0].std_dev, fmt='.',label=str(m[i])+" kg")
+plt.ylabel(r"$ \frac{1}{\omega_R} /s$")
+plt.xlabel(r"$\omega_P / s^{-1}$")
+ax.legend(loc="upper left",frameon=True)
+plt.savefig("wpwr.png")
+plt.show()
+
 mes2 = unumpy.uarray([float(input("Masse Ausgleichgewicht: ")),
                       float(input("Dicke Ausgleichgewicht: ")),
                      float(input("Durchmesser Ausgleichgewicht: ")),
                     float(input("Abstand Ausgleichgewicht zu Unterstützpunkt: ")),
                       float(input("Abstand Kerbe - Drehachse: ")),
                       float(input("Stablänge: "))],[float(x) for x in input("Fehler: ").split(",")])
-a=[]
-c=[]
-for i in range(len(m)):
-    a.append([float(x) for x in input("Rotationsperioden " + str(m[i])+" kg:").split(",")])
-b=[float(input("Fehler der Lichtschranke: "))]
-rotp1 = unumpy.uarray(a,b) 
-for i in range(len(m)):
-    c.append([float(x) for x in input("Halbe Präzessionsperioden "+ str(m[i])+" kg:").split(",")])
-d=[float(input("Fehler der Stoppuhr + Reaktionszeit: "))]
-prazf = unumpy.uarray(c,d)
-wr = 1/(2*np.pi)*(rotp1)
-wrp = [[a[i][j]/(2*np.pi) for j in range(len(a[i]))] for i in range(len(m))]
-wp = [np.pi/(prazf[i][j]) for i in range(len(m)) for j in range(len(prazf[i]))]
-wpp = [[np.pi/c[i][j] for j in range(len(c[i]))] for i in range(len(m))]
-wppf = [[prazf[i][j].s for j in range(len(prazf[i]))] for i in range(len(m))]
-wrpf = [[rotp1[i][j].std_dev for j in range(len(rotp1[i]))] for i in range(len(m))]
-
-f = plt.figure()
-ax = plt.axes()
-for i in range(len(m)):
-    plt.errorbar(wpp[i],wrp[i], yerr=wppf[i],xerr=wrpf[i], fmt='.',label=str(m[i])+" kg");
-#plt.axis([0,3.5,0,0.05]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
-plt.ylabel(r"$ \frac{1}{\omega_R} /s$")
-plt.xlabel(r"$\omega_P / s^{-1}$")
-ax.legend(loc="upper left",frameon=True)
-plt.savefig("wpwr.png")
-plt.show()
 
 def thm3(r,m,wr,wp):
     g = 9.81
