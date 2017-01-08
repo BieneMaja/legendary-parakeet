@@ -48,9 +48,7 @@ wr = 1/(2*np.pi)*(rotp1)
 wrp = [[a[i][j]/(2*np.pi) for j in range(len(a[i]))] for i in range(len(m))]
 wp = np.pi/(prazf)
 wpp = [[np.pi/c[i][j] for j in range(len(c[i]))] for i in range(len(m))]
-wppf = wp[0][0].std_dev
-wrpf = wr[0][0].std_dev
-print(wppf,wrpf)
+
 f = plt.figure()
 ax = plt.axes()
 for i in range(len(m)):
