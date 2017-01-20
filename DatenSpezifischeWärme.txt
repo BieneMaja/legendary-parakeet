@@ -1,0 +1,79 @@
+# Spannung in mVolt (10 Spannungen)
+
+# Druckänderung in mm
+
+
+
+
+
+
+
+
+
+
+#Fehler der Druckänderung in mm (0-6)
+2
+#Fehler der Druckänderung in mm (7-9)
+5
+
+#B
+#Masse des SChwingkörpers in g, Rohrdurchmesser in mm, Volumen in cm3, Luftdruck im Raum in Hpa
+
+
+Luft
+# SChwingungen
+
+#SChwingungsdauer in ms
+
+
+
+
+
+# Amplitude in mm
+
+#Fehler in mm
+
+
+CO_2
+
+
+
+
+
+# Ampitude in mm
+
+#Fehler in mm
+
+
+Argon
+
+
+
+
+
+# Amplitude in mm
+
+# Fehler in mm
+
+
+#C
+#Volumen in Liter V0
+
+# Zeit 0.1 s
+# h1 in mm
+
+#h2 in mm
+
+# Zeit 1 s
+#h1 in mm
+
+h2 in mm
+
+#Zeit 5 s
+# h1 in mm
+
+#h2 in mm
+
+# Fehler in mm
+
+#Luftdruck im Raum in HPa
