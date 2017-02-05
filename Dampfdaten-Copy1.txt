@@ -1,0 +1,3 @@
+# Widerstand in Ohm (1 bar bis 36 bar) in einer Zeile, durch Kommata getrennt
+
+#Widerstand in Ohm beim Abkühlen (36 bar bis 5 bar) in einer Zeile, durch Kommata getrennt
