@@ -1,0 +1,76 @@
+Radien der Kapillare (jeweis drei Werte in 10^-3 m) und alles mit , getrennt:
+grün
+
+rot
+
+blau
+
+Fehler
+
+Höhenunterschiede (jeweils drei Messungen in 10^-3 m)
+Wasser
+grün
+
+rot
+
+blau
+
+Methanol
+grün
+
+rot
+
+blau
+
+Ethylenglykol
+grün
+
+rot
+
+blau
+
+Fehler 
+
+Dichte der Flüssigkeiten (jeweils einmal in kg*m^(-3))
+Wasser
+
+Methanol
+
+Ethylenglykol
+
+Fehler 
+
+Versuchsteil 2
+Volumen des Glasgefäßes zwischen Strichmarken 50 und 45 in m^3 (Radius = 0.0115 m)
+
+Fehler
+
+Länge der Kapillaren in m
+grün
+
+rot
+
+blau
+
+Fehler
+
+Temperatur des destillierten Wassers in °C
+
+Fehler
+
+Ausflusszeit (Wasser) in s (zwischen 50- und 45-Marken)
+grün
+
+rot
+
+blau
+
+Fehler
+
+Höhe der Wassersäule (10 Werte in m) in Kapillar (grün, rot, blau=)
+
+Fehler
+
+Ausflusszeit (gleiche Reihenfolge wie Höhen) in m
+
+Fehler
