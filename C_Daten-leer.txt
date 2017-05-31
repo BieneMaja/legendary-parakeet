@@ -1,0 +1,41 @@
+Beladespannung in kV
+
+
+Abstand in m (Kugel mit Durchmesser 4cm)
+
+
+Gemessene Spannung am Messgerät in V (Zeile: Abstand)
+
+
+
+
+
+
+
+
+
+
+
+Wechseln des Messbereichs von 1 nach 2 nach x Messungen:
+
+von 2 nach 3 nach x Messungen:
+
+
+Fehler in kV/m:
+
+
+Fehler beim Abstand in m
+
+
+Kugeldurchmesser (1, 2, 3) in m
+
+
+Beladespannung in kV
+
+
+Gemessene Spannung (Zeile: Kugeln)
+
+
+
+
+Messbereich von 1 nach 2 gewechselt nach x Messungen:
