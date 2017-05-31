@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[26]:
-
 # Versuch 7 Coulombsches Gesetz
 
 import numpy as np
@@ -56,8 +51,6 @@ for i in range(3):
             gsp[i][j] = gsp[i][j]*0.1
 
 
-# In[33]:
-
 # Versuchsteil 1
             
 slope, intercept, r_value, p_value, std_err = [0 for i in range(10)], [0 for i in range(10)], [0 for i in range(10)], [0 for i in range(10)], [0 for i in range(10)]
@@ -103,9 +96,6 @@ ax.legend(loc="upper left",frameon=True)
 plt.savefig("Plot_1.png")
 plt.show()
 
-
-# In[28]:
-
 # Doppeltlogarithmisch Steigung gegen Abstand
 
 fig = plt.figure()
@@ -130,9 +120,6 @@ plt.axis([-0.2, 2.5,-0.5,2.2]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, 
 ax.legend(loc="upper left",frameon=True)
 plt.savefig("Plot_2.png")
 plt.show()
-
-
-# In[32]:
 
 # Feldstärke gegen Beladespannung
 
@@ -170,24 +157,3 @@ for i in range(3):
 print("\\begin{table}[H]\n\centering\n\\begin{tabular}{|c|c|}\hline\n Kugelradius in $10^{-2}m$ & Steigung in $\\frac{1}{m}$ \\\\\hline \n")
 print("1 & $%.2f \pm %.2f$ \\\\\hline \n 2 & $%.2f \pm %.2f$ \\\\\hline \n 6 & $%.2f \pm %.2f$ \\\\\hline \n" % (prop[0], prop_fehler[0], prop[1], prop_fehler[1], prop[2], prop_fehler[2]))
 print("\end{tabular}\n\caption{Proportionalitätsfaktor}\n \label{tab:prop}\n\end{table}")
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
