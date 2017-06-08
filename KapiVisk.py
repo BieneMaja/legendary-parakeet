@@ -163,7 +163,7 @@ print("Gewichteter Mittelwert Viskosität: ", vis_mittel, "+/-", s_vis_mittel)
 
 # Ausflusszeit in Abhängigkeit der Höhe
 hw = [np.log(x) for x in hw]
-s_hw = np.log(s_hw)
+s_hw_plot = [abs(s_hw/x) for x in hw]
 
 slope, intercept, r_value, p_value, std_err = stats.linregress(ta2,hw)
 print("m = ",slope,"b = ", intercept,"Fehler: ", std_err)
@@ -171,16 +171,13 @@ fig = plt.figure()
 ax = plt.axes()
 x = np.linspace(0,130,130)
 plt.plot(slope*x+intercept, label="Regression")
-plt.errorbar(ta2, hw, xerr = s_ta2, yerr = s_hw, fmt='.',label="Höhe nach der Ausflusszeit")
+plt.errorbar(ta2, hw, xerr = s_ta2, yerr = s_hw_plot, fmt='.',label="Höhe nach der Ausflusszeit")
 plt.xlabel(r"$t_A /$ s")
-plt.ylabel(r"$ln(h) /$ ln(m)")
-plt.axis([0, 130,-10,10]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
+plt.ylabel(r"$ln(h/\mathrm{m})$")
+plt.axis([0, 130,-0.95,-0.65]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper right",frameon=True)
 plt.savefig("H_ta.png")
 plt.show()
-
-
-# In[4]:
 
 # Viskosität
 visk = -1*d[0]*9.81*rad_mittel[1]**4/(8*slope*l[1]*(1.15*10**(-2))**2)
