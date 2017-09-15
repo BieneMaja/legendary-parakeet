@@ -1,0 +1,69 @@
+Innenwiderstand Amperemeter in Ohm
+
+Fehler in Ohm
+
+Ohmscher Widerstand in Ohm
+
+Fehler in Ohm
+
+Spulenwiderstand in Ohm
+
+Wicklungszahl der Spule
+
+Durchmesser der Spule in m
+
+Kapazität in Mikrofarad
+
+Fehler in Prozent
+
+
+Messung I
+Frequenzen in Hz (11 Werte)
+
+Strom in mA (11 Werte)
+
+Fehler in mA
+
+Spannung in V (11 Werte)
+
+Fehler in V
+
+Phasenverschiebung in pi
+
+Fehler x wie in in pi/x
+
+
+Messung II
+Frequenzen in Hz
+
+Strom in mA
+
+Fehler in mA
+
+Spannung gesamt in V
+
+Fehler in V
+
+Phasenverschiebung: x wie in pi/x (0, falls phi = 0)
+
+Fehler: x wie in pi/x
+
+Spannung am Kondensator U_c in V
+
+Fehler in V
+
+Spannung Kondensator und Spule U_(L+c) in V
+
+Fehler in V
+
+
+Messung III
+Frequenzen in Hz
+
+Strom in mA
+
+Fehler in mA
+
+Spannung in V
+
+Fehler in V
