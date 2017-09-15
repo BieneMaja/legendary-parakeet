@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[1]:
-
 import numpy as np
 import matplotlib.pyplot as plt
 get_ipython().magic('matplotlib inline')
@@ -71,9 +69,6 @@ y0 = [float(inhalt[29+i].split(",")[3]) for i in range(6)]
 
 f_abl = float(inhalt[37])
 
-
-# In[2]:
-
 # U1 gegen I1 auftragen, Verlauf diskutieren (soll linear sein)
 
 fig = plt.figure()
@@ -86,7 +81,7 @@ plt.ylabel(r"$U_1$ in V")
 plt.xlabel(r"$I_1$ in A")
 plt.axis([0, 2.5, 0, 16]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper left",frameon=True)
-#plt.savefig("UgegenI.png")
+plt.savefig("UgegenI.png")
 plt.show()
 
 
@@ -111,7 +106,7 @@ plt.ylabel(r"$U_2$ in V")
 plt.xlabel(r"$U_1$ in V")
 #plt.axis([0, 8, 0, 16]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper left",frameon=True)
-#plt.savefig("U2gegenU1.png")
+plt.savefig("U2gegenU1.png")
 plt.show()
 
 
@@ -136,7 +131,7 @@ plt.ylabel(r"$U_1$ in V")
 plt.xlabel(r"$U_2$ in V")
 plt.axis([0, 16, 0, 16]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper left",frameon=True)
-#plt.savefig("U1gegenU2.png")
+plt.savefig("U1gegenU2.png")
 plt.show()
 
 # Gewichteter Mittelwert für u
@@ -150,9 +145,6 @@ plt.show()
 # Phasenverschiebung und Theoriekurve in einen Plot malen
 
 # Komische Handyladegerätaufgabe rechnen
-
-
-# In[3]:
 
 # Phasenverschiebung aus phi = 2*arccos(I_ges/(2*I_1))
 phi, f_phi, f_phi2 = [],[],[]
@@ -168,9 +160,6 @@ print("Phasenverschiebung φ zwischen  der  Spannung  und  dem  Gesamtstrom.")
 
 for i in range(len(I22)):
     print("$", I22[i], "$&$", phi[i], "\pm",f_phi2[i], "$\\\\\hline")
-
-
-# In[4]:
 
 # Phasenverschiebung aus Lissajousfiguren
 
@@ -197,9 +186,6 @@ print("Gewichtete  Mittelwerte  der  Phasenverschiebung φ zwischen  der  Spannu
 for i in range(len(I22)):
     print("$", I22[i], "$&$", mittelphi[i][0], "\pm",mittelphi[i][1], "$\\\\\hline")
 
-
-# In[5]:
-
 fig = plt.figure()
 ax = plt.axes()
 x = np.linspace(-0.2, 1.6, 30)
@@ -213,11 +199,8 @@ plt.ylabel(r"$\phi$ in rad.")
 plt.xlabel(r"$I_2$ in A")
 plt.axis([-0.2, 1.6, 0, 2]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper right",frameon=True)
-#plt.savefig("phitheorie.png")
+plt.savefig("phitheorie.png")
 plt.show()
-
-
-# In[6]:
 
 # Wirk- und Verlustleistung bei 1.5 A und 200 V.
 print(1.5*200*np.sin(mittelphi[5][0]), "\pm", mittelphi[5][1]*1.5*200*np.cos(mittelphi[5][1]))
@@ -226,19 +209,3 @@ print(365*24*I21[0]*200*np.sin(mittelphi[5][0])*0.25*0.001, "\pm", 365*24*f_I*20
 print(365*24*I21[0]*200*np.cos(mittelphi[5][0])*0.25*0.001, "\pm", 365*24*f_I*200*np.cos(mittelphi[5][0])*0.25*0.001) # Nachdem Merten meinte, sin und cos wären vertauscht
 #print(I21[0], "\pm", f_I, "V")
 print("\n", mittelphi[5][0], "\pm", mittelphi[5][1])
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
