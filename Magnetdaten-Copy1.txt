@@ -1,0 +1,38 @@
+# Spulendaten: Reihenfolge lang, kurz, Helmholtz, Induktion
+# Durchmesser in m
+
+# Windungszahl
+
+# Länge (lang, kurz) in m
+
+# Drahtdurchmesser (lang, kurz) in mm braucht man gar nicht
+
+
+# Eichung
+Zeiten in ms (als fehlerfrei angenommen)
+
+# Zahl am Integrator (positiv oder negativ)
+
+Fehler der Zahl
+
+
+# Messung per Induktionsspule
+Abstand zur Spulenmitte in cm
+
+Fehler des Abstandes in cm
+
+Gemessene Zahl
+
+
+# Messung per Hallsonde
+Abstand von 0 bis x cm für lange und kurze Spule
+
+Abstand von 0 bis x cm für die Helmholtzspule
+
+Gemessenes Magnetfeld in (-1)*Gauss (Reihenfolge lang, kurz, Helmholtz)
+
+
+
+Fehler in Gauss
+
+angezeigter Wert außerhalb der Messung in (-1)*Gauss
