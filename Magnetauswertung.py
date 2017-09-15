@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[1]:
-
 import numpy as np
 import matplotlib.pyplot as plt
 get_ipython().magic('matplotlib inline')
@@ -74,8 +72,6 @@ Boff = -1*float(inhalt[38])*10**(-4)
 B = [[B[i][j]-Boff for j in range(len(B[i]))]for i in range(3)]
 
 
-# In[5]:
-
 # Eichung
 def k(rs, r1, r2, u, dt, z, f_rs, f_z):
     k = r2/(rs*(r2+r1)+r1*r2)*u*dt/z
@@ -129,8 +125,6 @@ def Q(m, b, z, f_m, f_b):
     return [q, f_q]
 
 
-# In[6]:
-
 # Messung mit der Induktionsspule
 q1 = [Q(m, b, z1[i], f_m, f_b) for i in range(len(z1))]
 
@@ -170,8 +164,6 @@ print(gew_mittel([B[0][i]-b_theorie(i*0.01,N[0],0.5,L[0],D[0]/2) for i in range(
 print(gew_mittel([b_theorie(i*0.02,N[0],0.5,L[0],D[0]/2)-B1_lang[i][0] for i in range(9)],[B1_lang[i][1] for i in range(len(B1_lang))]))
 
 
-# In[4]:
-
 fig = plt.figure()
 ax = plt.axes()
 x = np.linspace(0,0.18,30)
@@ -199,8 +191,6 @@ ax.legend(loc="lower left",frameon=True)
 plt.show()
 
 
-# In[5]:
-
 # Gruppenplot
 fig = plt.figure()
 ax = plt.axes()
@@ -219,8 +209,6 @@ plt.show()
 print(gew_mittel([(4/5)**(3/2)*N[2]*mu*0.25/(D[2]/2)-B[2][i] for i in range(len(B[2]))],[f_B for i in range(len(B[2]))]))
 #print("sigma_B1 =", 0.05*mu*N[1]*0.5/(2*L[1])*((x+L[1]/2)/np.sqrt((D[1]/2)**2 + (x+L[1]/2)**2)-(x-L[1]/2)/np.sqrt((D[1]/2)**2+(x-L[1]/2)**2)))
 
-
-# In[6]:
 
 # Bestimmung von mu_0
 def h_theorie(z, n, I, l, R, f_I,f_z):
@@ -255,8 +243,6 @@ print(a)
 print(gew_mittel([a[i][0] for i in range(4)],[a[i][1] for i in range(4)]))
 
 
-# In[16]:
-
 # normierter Plot
 f_abn = [f_ab1/L[0],f_ab1/L[1], f_ab1/D[0]]
 f_Bn = []
@@ -279,14 +265,3 @@ ax.legend(loc="lower left",frameon=True)
 plt.show()
 #print(gew_mittel([(4/5)**(3/2)*N[2]*mu*0.25/(D[2]/2)-B[2][i] for i in range(len(B[2]))],[f_B for i in range(len(B[2]))]))
 #print("sigma_B1 =", 0.05*mu*N[1]*0.5/(2*L[1])*((x+L[1]/2)/np.sqrt((D[1]/2)**2 + (x+L[1]/2)**2)-(x-L[1]/2)/np.sqrt((D[1]/2)**2+(x-L[1]/2)**2)))
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
