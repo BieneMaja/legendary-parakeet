@@ -1,0 +1,60 @@
+# Spulen: Windungszahl
+
+# Spulenstrom in A
+
+# Massen der Probekörper (TA, MN02, BI) = (B1, B2, B3) in g
+
+# Magnetfeld Offset in -1*T
+
+# Fehler Magnetfeld in T
+
+# Fehler Strom in A
+
+# Fehler der Waage in g
+
+# Abstand von 0 bis x in mm
+
+# Schrittweite in mm
+
+# Magnetfeld in -1*T
+
+
+# Festlegung des Ortes
+# Position in mm (B1, B2, B3), ohne Magnetfeld
+
+
+
+# mit Magnetfeld
+
+
+
+
+# Messung der Kraft auf Probekörper
+# ohne Magnetfeld: in g (B1, B2, B3)
+
+
+
+# mit Magnetfeld
+
+
+
+
+# Ausmessung des Magnetfeldes bei verschiedenen Stromstärken
+Abstand in mm
+
+Magnetfeld in -1*T bei (0.8, 1, 1.2, 1.4)A
+
+
+
+
+
+# Messung der Kraft auf den Körper MN02 (B2)
+Ohne Magnetfeld: in g bei (0.8, 1, 1.2, 1.4) A
+
+
+
+
+Mit Magnetfeld:
+
+
+
