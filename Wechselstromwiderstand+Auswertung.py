@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[1]:
-
 import numpy as np
 import matplotlib.pyplot as plt
 get_ipython().magic('matplotlib inline')
@@ -90,9 +88,6 @@ f_I3 = float(inhalt[65])*0.001
 U3 = [float(x) for x in inhalt[67].split(",")]
 f_U3 = float(inhalt[69])
 
-
-# In[2]:
-
 # Plot Impedanz Z^2 = (U/I)^2 gegen w^2= (2 pi f)^2
 w2 = [(2*np.pi*x)**2 for x in F1]
 Z2 = [(U1[i]/I1[i])**2 for i in range(len(F1))]
@@ -121,11 +116,8 @@ plt.ylabel(r"$Z^2$ in $10^{5}\Omega^2$")
 plt.xlabel(r"$\omega^2$ in $10^{5}\frac{1}{\mathrm{s}^2}$")
 #plt.axis([390000, 1610000,470,1000]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper left",frameon=True)
-#plt.savefig("w2z2.png")
+plt.savefig("w2z2.png")
 plt.show()
-
-
-# In[3]:
 
 L = np.sqrt(m)
 f_L = 1/(2*np.sqrt(m))*lin_sigma(w2, Z2, m, b)[0]
@@ -133,9 +125,6 @@ R = np.sqrt(b)
 f_R = 1/(2*np.sqrt(b))*lin_sigma(w2, Z2, m, b)[1]
 print("L &= %.4f \pm %.4f \Omega\cdot \mathrm{s}" % (L, f_L))
 print("R &= %.3f \pm %.4f \Omega" % (R, f_R))
-
-
-# In[4]:
 
 # Plot Impedanz Z = (U/I) gegen w= (2 pi f)
 w1 = [(2*np.pi*x) for x in F2]
@@ -154,11 +143,9 @@ plt.ylabel(r"$Z$ in $\Omega$")
 plt.xlabel(r"$\omega$ in $\frac{1}{\mathrm{s}}$")
 #plt.axis([390000, 1610000,470,1000]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper left",frameon=True)
-#plt.savefig("wz.png")
+plt.savefig("wz.png")
 plt.show()
 
-
-# In[5]:
 
 # Plot Phasenverschiebung gegen w
 
@@ -170,12 +157,9 @@ plt.ylabel(r"$\phi$ in $\pi$")
 plt.xlabel(r"$\omega$ in $\frac{1}{\mathrm{s}}$")
 #plt.axis([390000, 1610000,470,1000]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 #ax.legend(loc="upper left",frameon=True)
-#plt.savefig("phi1.png")
+plt.savefig("phi1.png")
 plt.show()
 print(inhalt[55])
-
-
-# In[6]:
 
 # gewichteter Mittelwert des Gesamtwiderstandes
 def gew_mittel(x, s_x):    
@@ -200,9 +184,6 @@ C = 1/(b[0]**2*L)
 s_C = np.sqrt((f_L/(b[0]**2*L**2))**2+(2*b[1]/(L*b[0]**3))**2)
 print("Kapazität der Spule C = ", C, "\pm", s_C)
 
-
-# In[7]:
-
 # gemeinsamer Gruppenplot
 
 fig = plt.figure()
@@ -215,11 +196,9 @@ plt.ylabel(r"$U$ in V")
 plt.xlabel(r"$\omega$ in $\frac{1}{\mathrm{s}}$")
 #plt.axis([600, 1300,0,3]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper right",frameon=True)
-#plt.savefig("UUU.png")
+plt.savefig("UUU.png")
 plt.show()
 
-
-# In[8]:
 
 print(U2[5], Uc[5], Ulc[5])
 print("\pm", f_U2, f_Uc, f_Ulc)
@@ -243,12 +222,9 @@ plt.yticks([])
 plt.annotate("U",xy=(1,-0.1))
 plt.annotate("U_{L+R}",xy=(0.3,1))
 plt.annotate("-U_C", xy=(-0.2,1))
-#plt.savefig("zeiger.png")
+plt.savefig("zeiger.png")
 plt.draw()
 plt.show()
-
-
-# In[9]:
 
 # Parallelkreis
 w3 = [2*np.pi*F3[i] for i in range(len(F3))]
@@ -263,11 +239,5 @@ plt.ylabel(r"$Z$ in $\Omega$")
 plt.xlabel(r"$\omega$ in $\frac{1}{\mathrm{s}}$")
 #plt.axis([390000, 1610000,470,1000]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 #ax.legend(loc="upper left",frameon=True)
-#plt.savefig("wz_parallel.png")
+plt.savefig("wz_parallel.png")
 plt.show()
-
-
-# In[ ]:
-
-
-
