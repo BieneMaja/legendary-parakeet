@@ -1,0 +1,37 @@
+# Primärspannung in V
+
+# Primärstrom in A
+
+
+# Primärspannung in V
+
+# Sekundärspannung in V
+
+
+# Primärspannung in V
+
+# Sekundärspannung in V
+
+
+# Strom I_2 in A
+
+# Strom I_1 in A
+
+# Strom I_ges in A
+
+
+Primärstrom in A
+
+Primärspannung in V
+
+
+# phi aus Lissajous
+# a, x0, b, y0 für (0, 0.3, 0.4, 0.6, 1, 1.5) A in Pixeln
+
+
+
+
+
+
+
+# Ablesefehler in Pixeln
