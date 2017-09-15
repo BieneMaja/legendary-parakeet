@@ -119,7 +119,7 @@ plt.ylabel(r"$B$ in T")
 plt.xlabel(r"Höhe $h$ in m")
 plt.axis([0, 0.07,-0.6,-0.15]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="lower left",frameon=True)
-#plt.savefig("B(h).png")
+plt.savefig("B(h).png")
 plt.show()
 
 
@@ -140,7 +140,7 @@ plt.ylabel(r"$B\cdot\frac{\partial B}{\partial h}$ in $\mathrm{T}^2\mathrm{m}^{-
 plt.xlabel(r"Höhe $h$ in m")
 plt.axis([0, 0.07,0,7]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(loc="upper left",frameon=True)
-#plt.savefig("B(h)dBdh.png")
+plt.savefig("B(h)dBdh.png")
 plt.show()
 
 
@@ -208,7 +208,7 @@ plt.xlabel(r"Höhe $h$ in m")
 plt.ylabel(r"$B$ in T")
 plt.axis([0.04,0.07,-0.6, -0.15]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(frameon=False, loc='lower center', ncol=2)
-#plt.savefig("B_strom.png")
+plt.savefig("B_strom.png")
 plt.show()
 
 
@@ -225,7 +225,7 @@ plt.xlabel(r"Höhe $h$ in m")
 plt.ylabel(r"$\frac{\partial B}{\partial h}$ in T/m")
 plt.axis([0.04,0.07,1, 5.5]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(frameon=False, loc='lower center', ncol=2)
-#plt.savefig("dB_strom.png")
+plt.savefig("dB_strom.png")
 plt.show()
 
 for i in range(4):
@@ -253,7 +253,7 @@ plt.xlabel(r"$I$ in A")
 plt.ylabel(r"$F$ in N")
 plt.axis([0.7,1.5,-0.00005, 0.0003]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(frameon=False, loc='lower center', ncol=2)
-#plt.savefig("F_strom.png")
+plt.savefig("F_strom.png")
 plt.show()
 
 
@@ -277,7 +277,7 @@ plt.xlabel(r"$I$ in A")
 plt.ylabel(r"$B$ in T")
 #plt.axis([0.75,1.45,-0.55,-0.2]) # ([x_Achsenstart, x-Achsenstopp, y-Achsenstart, y-Achsenstopp])
 ax.legend(frameon=True, loc='lower left')
-#plt.savefig("FeldausF.png")
+plt.savefig("FeldausF.png")
 plt.show()
 
 
