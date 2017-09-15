@@ -1,8 +1,6 @@
 
 # coding: utf-8
 
-# In[2]:
-
 import numpy as np
 from numpy.polynomial import polynomial as P
 import matplotlib.pyplot as plt
@@ -80,8 +78,6 @@ wo2 = [[float(x)*0.001 for x in inhalt[52+i].split(",")] for i in range(4)]
 wm2 = [[float(x)*0.001 for x in inhalt[57+i].split(",")] for i in range(4)]
 
 
-# In[3]:
-
 # Plot des Ortsverlaufes von B(h)
 p, cov = np.polyfit(ab1,B1, 5, cov=True)
 for i in range(6):
@@ -127,8 +123,6 @@ ax.legend(loc="lower left",frameon=True)
 plt.show()
 
 
-# In[4]:
-
 f_bdbdh = [np.sqrt((f_B*((p2[0]*ab1[i]**4+p2[1]*ab1[i]**3+p2[2]*ab1[i]**2+p2[3]*ab1[i]+p2[4])))**2
                   +(f_p2[0]*ab1[i]**4*B1[i])**2+(f_p2[1]*ab1[i]**3*B1[i])**2
                   +(f_p2[2]*ab1[i]**2*B1[i])**2+(f_p2[3]*ab1[i]*B1[i])**2
@@ -150,8 +144,6 @@ ax.legend(loc="upper left",frameon=True)
 plt.show()
 
 
-# In[5]:
-
 a, hoehe, prd = [],[],[]
 for j in range(3):
     a.append(gew_mittel([reg(posm[j][i],p,f_p)[0] for i in range(len(posm[j]))],[reg(posm[j][i],p,f_p)[1] for i in range(len(posm[j]))]))
@@ -165,16 +157,12 @@ for i in range(3):
     print("&$%.1f$ & $%.5f \pm %.5f$ &$%.5f \pm %.5f$ \\\\\hline" % (hoehe[i][0]*1000, a[i][0], a[i][1], prd[i][0],prd[i][1]))
 
 
-# In[6]:
-
 F1 = []
 print("Gewichtete Mittelwerte für die Kraft auf die Probekörper.")
 for i in range(len(wm1)):
     F1.append(gew_mittel([(wm1[i][j]-wo1[i][j])*9.81 for j in range(3)],[np.sqrt(2)*f_W*9.81 for j in range(3)]))
     print("&$%.4f \pm %.4f$\\\\\hline *10^{-4}" % (F1[i][0]*10**4,F1[i][1]*10**4))
 
-
-# In[7]:
 
 def chi(F, rho, m, Bdbdh, f_F, f_bdbdh):
     mu = 4*np.pi*10**(-7)
@@ -192,7 +180,6 @@ for i in range(3):
                                                         chi(F1[i][0], rho[i], m[i], prd[i][0], F1[i][1], prd[i][1])[1]/rho[i]*10**6))
 
 
-# In[8]:
 
 # Für verschiedene Stromstärken den Gradienten von B bestimmen
 fig = plt.figure()
@@ -225,8 +212,6 @@ ax.legend(frameon=False, loc='lower center', ncol=2)
 plt.show()
 
 
-# In[9]:
-
 fig = plt.figure()
 ax = plt.axes()
 x = np.linspace(0.04,0.07, 100)
@@ -247,8 +232,6 @@ for i in range(4):
     print("$%.1f$ & $%.3f h + %.3f$ \\\\\hline"
           %(Strom[i], 2*Bm[i][0], Bm[i][1]))
 
-
-# In[10]:
 
 Delta_m = [gew_mittel([wm2[i][j]-wo2[i][j] for j in range(3)],[np.sqrt(2)*f_W for j in range(3)]) for i in range(4)]
 FI = [[Delta_m[i][0]*9.81, Delta_m[i][1]*9.81] for i in range(4)]
@@ -274,8 +257,6 @@ ax.legend(frameon=False, loc='lower center', ncol=2)
 plt.show()
 
 
-# In[11]:
-
 dbdh1 = dbdh(ab2[2], p2)
 print(dbdh1)
 print(ab2[2])
@@ -299,8 +280,6 @@ ax.legend(frameon=True, loc='lower left')
 #plt.savefig("FeldausF.png")
 plt.show()
 
-
-# In[ ]:
 
 
 
