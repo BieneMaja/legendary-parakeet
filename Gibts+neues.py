@@ -1,7 +1,7 @@
 import urllib.request #um Zeug aus dem Internet zu fischen
 from bs4 import BeautifulSoup # um aus html einen schönen str zu machen
 
-daten = open("Gibtsneues2.txt", mode="r+") # "r+" heißt lesen und schreiben
+daten = open("Gibtsneues.txt", mode="r+") # "r+" heißt lesen und schreiben
 inhalt = daten.readlines() # Liste aus str, die jeweils in einer Zeile stehen
 # In der Zeile steht jeweils, wie oft "Blatt", "Skript" oder ähnliches das letzte Mal auf der Seite stand.
 
